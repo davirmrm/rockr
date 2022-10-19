@@ -1,0 +1,6 @@
+{
+  "menu": [
+    { "id": "posts", "label": "Posts", "go": "/posts", "icon": "" },
+    { "id": "contact", "label": "Contact", "go": "/contact", "icon": "" }
+  ]
+}

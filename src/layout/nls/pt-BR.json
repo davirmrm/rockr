@@ -1,0 +1,8 @@
+{
+    "applicationTitle": "Rockr Blog",    
+    "applicationFooter": "Copyright © 2022 Rockr Blog.",    
+    "message": {
+        "mandatory": "Obrigatório",
+        "mandatoryFields": "Preencha os campos obrigatórios."
+    }
+}
