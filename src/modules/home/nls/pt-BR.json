@@ -1,0 +1,9 @@
+{
+  "title": "",
+  "moreInfo": "loading more posts...",
+
+  "mensagem": {
+    "obrigatorio": "Obrigatório",
+    "camposObrigatorios": "Preencha os campos obrigatórios."
+  }
+}

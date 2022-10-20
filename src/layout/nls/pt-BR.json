@@ -1,0 +1,23 @@
+{
+    "applicationTitle": "Rockr Blog",    
+    "applicationFooter": "Copyright © 2022 Rockr Blog.", 
+    
+    "contactTitle": "Contact",
+    "name": "Name",
+    "namePlaceholder": "Fill your full name",
+    "email": "E-mail",
+    "emailPlaceholder": "Fill a valid e-mail",
+    "phone": "Phone",
+    "phonePlaceholder": "Fill your phone",
+    "post": "Message",
+    "postPlaceholder": "Hello...",
+
+    "submit": "Submit",
+    "close": "Close",
+
+    "message": {
+        "mandatory": "Mandatory",
+        "mandatoryFields": "Fill in the mandatory fields.",
+        "submitSuccess": "your contact has been successfully submitted."
+    }
+}
