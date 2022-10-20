@@ -35,8 +35,16 @@ export default () => {
   }, []);
 
   useEffect(() =>{
-    dispatchListPost({_page: page + 1, _limit: 5})
+    if (posts.length) {
+      dispatchListPost({_page: page + 1, _limit: 5})
+    }
   }, [currentPage]);
+
+  useEffect(() =>{
+    if (!posts.length) {
+      dispatchListPost({_page: 0, _limit: 5})
+    }
+  }, [posts.length === 0]);
 
   const handlePost = e => {
     dispatch(setPostLoad(e))

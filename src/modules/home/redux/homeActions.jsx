@@ -32,6 +32,7 @@ export const postList = e => {
       ])
     })
     .catch(error => {
+      console.log(error, 'erro postList');
       dispatch(loaded())
       // dispatch(AddAlert('error', nls.mensagem[error.request.response]))
     })
