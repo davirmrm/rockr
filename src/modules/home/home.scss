@@ -1,2 +1,27 @@
+.box-home{
+   &-content{
+      background-color: var(--background-page-container);
+      color: var(--color-page);
+      margin-bottom: 15px;
+      box-shadow: 0px 0px 5px 2px var(--background-page-container-shadow);
+      height: 300px;
+
+      display: flex; 
+      &-img{
+         width: 300px;
+         img{
+            width: 300px;
+         }
+      } 
+      &-info{
+         padding: 15px 15px 15px 30px;
+      } 
+      h3{
+         color: var(--primary-bg);
+      }
+   }
+}
+
+
 @media (max-width: 780px) {
 }

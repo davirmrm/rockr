@@ -21,8 +21,8 @@ export const Modal = ({
     <Portal name="modal">
       {open
         ? size === 'fullscreen'
-          ? fullscreen({ title, open, children, size, closeText, close, actions, cy })
-          : modalNormal({ title, open, children, size, closeText, close, actions, cy })
+          ? fullscreen({ title, open, children, size, closeText, close, actions })
+          : modalNormal({ title, open, children, size, closeText, close, actions })
         : null}
     </Portal>
   );
@@ -60,7 +60,7 @@ const modalNormal = ({
     <div className={`box-modal`} >
       <div className={`size-${size}`}>
         <div className="modal-header" >
-          {title}
+          <div>{title}</div>
           <Button className="modal-close" onClick={close} title={closeText} >
             <IcoClose />
           </Button>
@@ -68,7 +68,7 @@ const modalNormal = ({
         <div className="modal-content">{children}</div>
         {actions ? (
           <div className="modal-actions">
-            <Button color="secondary" variant="outline" onClick={close}>
+            <Button color="secondary" onClick={close}>
               {closeText}
             </Button>
             {actions}

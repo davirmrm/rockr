@@ -61,3 +61,41 @@ export const MaskValor = (valor, language = "pt-BR" ) => {
   let v = valor.toLocaleString(language)
   return v
 }
+
+
+export const MaskDataHora = (valor, options) => {
+  if (options?.language) {
+    if (options?.language === 'en-US') {
+      options = {...options, format: 'MM/DD/YYYY-HH:MM:SS'}
+    }
+    if (options?.language === 'pt-BR') {
+      options = {...options, format: 'DD/MM/YYYY-HH:MM:SS'}
+    }
+  }
+  const formatos = options?.format?.split('-');
+  let valueNew = {data: '', hora: ''}
+  let data = new Date(valor);
+
+  
+  if (options?.format) {
+    const formato = formatos[0].split('/');
+    const formType = {
+      'DD': adicionaZero(data.getDate()),
+      'MM': adicionaZero(data.getMonth()+1),
+      'YYYY': data.getFullYear()
+    }
+    const formatoHora = formatos[1].split(':');
+    const formTypeHora = {
+      'HH': adicionaZero(data.getHours()),
+      'MM': adicionaZero(data.getMinutes()),
+      'SS': adicionaZero(data.getSeconds())
+    }
+    
+    valueNew.data = `${formType[formato[0]]}/${formType[formato[1]]}/${formType[formato[2]]}`;
+    valueNew.hora = `${formTypeHora[formatoHora[0]]}:${formTypeHora[formatoHora[1]]}:${formTypeHora[formatoHora[2]]}`;
+  } else {
+    valueNew.data = `${adicionaZero(data.getDate())}/${adicionaZero(data.getMonth()+1)}/${data.getFullYear()}`;
+    valueNew.hora = `${adicionaZero(data.getHours())}:${adicionaZero(data.getMinutes())}:${adicionaZero(data.getSeconds())}`;
+  }
+  return valueNew
+}

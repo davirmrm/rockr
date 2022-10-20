@@ -1,8 +1,13 @@
 {
     "applicationTitle": "Rockr Blog",    
-    "applicationFooter": "Copyright © 2022 Rockr Blog.",    
+    "applicationFooter": "Copyright © 2022 Rockr Blog.", 
+    
+    "submit": "Submit",
+    "close": "Close",
+
     "message": {
-        "mandatory": "Obrigatório",
-        "mandatoryFields": "Preencha os campos obrigatórios."
+        "mandatory": "Mandatory",
+        "mandatoryFields": "Fill in the mandatory fields.",
+        "submitSuccess": "your contact has been successfully submitted."
     }
 }

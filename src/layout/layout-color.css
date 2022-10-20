@@ -1,11 +1,11 @@
 :root {
-  --primary-bg: #49AF3E;
-  --primary-bgh: #39922f;
+  --primary-bg: #F1A10A;
+  --primary-bgh: #cc8707;
   --primary-color: #ffffff;
 
-  --secondary-bg: #fff;
-  --secondary-bgh: #acacac;
-  --secondary-color: #252d39;
+  --secondary-bg: #222222;
+  --secondary-bgh: #2D2D2D;
+  --secondary-color: #ffffff;
 
   --success-bg: #00a65a;
   --success-bgh: #028a4d;
@@ -28,15 +28,15 @@
   --scrollbar-thumbh: #2f3d41;
 
   --background-page: #fff;
-  --color-page: #333;
-  --background-container: #f2f2f2;
+  --color-page: #2D2D2D;
+  --background-container: linear-gradient(to right, #F1A10A, #222222);
   --background-page-container: #fff;
-  --background-page-container-shadow: #cacaca;
+  --background-page-container-shadow: #2c2c2c;
 
-  --background-header: #FFFFFF;
-  --background-header-h: #86c33a;
-  --background-header-b: #367fa9;
-  --color-header: #818385;
+  --background-header: #2D2D2D;
+  --background-header-h: #F1A10A;
+  --background-header-b: #F1A10A;
+  --color-header: #fff;
   --background-top-header: #252d39;
 
   --background-sidebar: #fff;
@@ -45,9 +45,9 @@
   --color-sidebar: #252d39;
   --color-sidebar-h: #fff;
 
-  --background-footer: #fff;
-  --background-footer-h: #f1f1f1;
-  --color-footer: #252d39;
+  --background-footer: #2D2D2D;
+  --background-footer-h: #F1A10A;
+  --color-footer: #fff;
 
   --input-bg: #fff;
   --input-bgh: #666;

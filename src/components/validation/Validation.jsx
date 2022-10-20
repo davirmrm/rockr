@@ -11,7 +11,7 @@ const typePatern = {
 }
 
 export const validacaoCampo = ({ valor, name, pattern }) => {
-  if (pattern?.search('type') !== -1) {
+  if (pattern !== undefined && pattern?.search('type') !== -1) {
     pattern = JSON.parse(pattern)
   }
   

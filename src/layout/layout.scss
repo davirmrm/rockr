@@ -5,6 +5,13 @@
     margin-left: 10px;
   }
 }
+.box-btn-center{
+  display: flex;
+  justify-content: center;
+  .btn + .btn{
+    margin-left: 10px;
+  }
+}
 
 #box-app {
   display: flex;
@@ -22,8 +29,14 @@
   position:relative;
   box-shadow: 0px 5px 15px 1px rgb(0 0 0 / 10%);
 
-  > div {
-    padding: 0 15px;
+  .box-header-content {
+    width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    > div {
+      padding: 0 15px;
+    }
   }
   .box-logo{
     height: 60px;
@@ -38,7 +51,6 @@
       }
     }
     h1{
-      color: var(--primary-bg);
       font-size: 20px;
       font-weight: 500;
       margin: 0;
@@ -52,12 +64,11 @@
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 0px;
-    /* color: currentColor; */
-    color: #252d39;
+    color: currentColor;
     cursor: pointer;
     display: inline-block;
     font-size: 1.0em;
-    padding: 8px 15px;
+    // padding: 8px 15px;
     transition: all 0.15s;
     .btFlex{
       display: flex;
@@ -67,12 +78,17 @@
       display: flex;
       font-size: 1.5em;
     }
-    :hover,
-    .open {
-      /* background-color: var(--background-header-h); */
+    :hover {
       background-color: transparent;
-      color: #86c33a;
+      color: var(--background-header-h);
     }
+    .open {
+      background-color: transparent;
+      color: var(--background-header-b);
+    }
+  }
+  .menu{
+    display: flex;
   }
 }
 
@@ -80,7 +96,8 @@
 #box-footer {
   background-color: var(--background-footer);
   color: var(--color-footer);
-  padding: 10px 15px;
+  font-size: 80%;
+  padding: 4px 15px;
   box-shadow: 0px 0px 10px 0px var(--background-page-container-shadow);
 }
 
@@ -89,9 +106,9 @@
   height: 100%;
   width: 100%;
   > div {
-    background-color: var(--background-container);
+    background: var(--background-container);
     color: var(--color-page);
-    min-height: calc(100% - 39px);
+    min-height: calc(100% - 23px);
     padding: 30px 15px 10px 15px;
   }
   .box-titulo{
@@ -146,5 +163,26 @@
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 2px var(--background-page-container-shadow);
+  }
+}
+
+
+
+#root-modal{
+  .box-contact{
+    .modal-header>div{
+      width: 100%;
+      text-align: center;
+      padding: 30px 0;
+    }
+    .modal-content{
+      padding: 0px 70px;
+      .box-btn-center{
+        padding: 40px 0 ;
+      }
+    }
+    .form-box{
+      margin-bottom: 20px;
+    }
   }
 }

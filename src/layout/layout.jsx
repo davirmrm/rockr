@@ -3,9 +3,11 @@ import Header from './header'
 import Footer from './footer'
 import './layout.scss'
 import './layout-color.css'
-import { Alert } from '../components'
+import { Alert, Loading } from '../components'
+import { useSelector } from 'react-redux'
 
 export default ({ children }) => {  
+  const { load } = useSelector(state => state.layoutState)
   const [heigthHeader, setHeigthHeader] = useState(0)
   useEffect(() => {
     setHeigthHeader(document.getElementById('box-header').offsetHeight)
@@ -14,6 +16,7 @@ export default ({ children }) => {
 
   return (
     <>
+      {load? <Loading title='Loading...' />:null}
       <Alert />
       <Header />
       <div id='box-app' style={heightApp}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { validarCampo } from '../../validation/Validation';
 
-export const Input = ({
+export const TextArea = ({
   action = () => null,
   actionBlur,
   type = 'text',
@@ -16,7 +16,6 @@ export const Input = ({
   let require = []
   if (required){
     require = Object.keys(required);
-
   }
   const pattern = (e) => {
     if (typeof required?.pattern === 'object') {
@@ -45,24 +44,24 @@ export const Input = ({
       } `}
     >
       {label ? (
-        <label className="label-input" htmlFor={`id-${name}`} >
-          {required && require?.length ? <span className='required-label'>*</span> : ''} 
+        <label className="label-input" htmlFor={`id-${name}`}>
+          {required && require.length ? <span className='required-label'>*</span> : ''} 
           <span className='input-label-span-text'>{label}</span>
         </label>
       ) : null}
 
       <div className={`input-${name}-wrapper input-wrapper`}>
         {props.left ? <div className="input-actions-left">{props.left}</div> : null}
-        <input
-          {...props}
+        <textarea
+          // {...props}
           id={`id-${name}`}
           type={type}
           name={name}
-          value={value}
           onChange={(e) => validar(e)}
           onBlur={(e) => validarOnblur(e)}
           pattern={pattern('')}
           placeholder={placeholder}
+          defaultValue={value}
         />
         {props.right ? <div className="input-actions">{props.right}</div> : null}
       </div>
