@@ -12,7 +12,7 @@ export default () => {
   const dispatch = useDispatch()
   const { posts, page } = useSelector((state) => state.homeState);
   const loaderRef = useRef(null);
-  const [currentPage, setCurrentPage] = useState(2);
+  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
     const options = {
@@ -42,7 +42,7 @@ export default () => {
 
   useEffect(() =>{
     if (!posts.length) {
-      dispatchListPost({_page: 0, _limit: 5})
+      dispatchListPost({_page: page, _limit: 5})
     }
   }, [posts.length === 0]);
 

@@ -27,7 +27,7 @@ export const postList = e => {
     .then(resposta => {
       dispatch([
         setPostList(resposta.data),
-        setPagePost(Number(e.params._page) + 1),
+        setPagePost(Number(e.params._page)),
         loaded()
       ])
     })
