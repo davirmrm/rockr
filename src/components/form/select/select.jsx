@@ -28,7 +28,6 @@ export const Select = ({
   optionCustom,
   labelCustom,
   required,
-  cy,
   ...props
 }) => {
   closeOnSelect =
@@ -172,7 +171,7 @@ export const Select = ({
       } `}
     >
       {label ? (
-        <label className="label-input" htmlFor={`id-${name}`} data-cy={`SelectBoxLabel${name}`}>
+        <label className="label-input" htmlFor={`id-${name}`}>
           {require ? <span className='required-label'>*</span> : ''} {label}
         </label>
       ) : null}
@@ -182,7 +181,6 @@ export const Select = ({
           onClick={(e) =>
             openSelect({ elem: e, value: !disabled ? !selectOpen : false })
           }
-          cy="OpenSelect"
         >
           {textButton(selected)}
         </Button>
@@ -205,13 +203,11 @@ export const Select = ({
                   filter={filter.text}
                   title={filter.title}
                   text={filter.text}
-                  cy={cy}
                 />
               ) : null}
 
               {multiSelect ? (
                 <div
-                  data-cy={`MultiSelectContainer${cy}`}
                   className={`select-all ${
                     selected.length > 0 && selected.length === options.length
                       ? 'selected'
@@ -222,7 +218,7 @@ export const Select = ({
                     closeOnSelect ? closeAction(selected) : null,
                   ]}
                 >
-                  <span className="checkelement" data-cy={`MultiSelectSpan${cy}`}></span>
+                  <span className="checkelement"></span>
                   {textCustom[3]}
                 </div>
               ) : null}
@@ -235,7 +231,6 @@ export const Select = ({
                       selectAction(''),
                       closeOnSelect ? closeAction('') : null,
                     ]}
-                    data-cy={`SelectedItemNotMultiSelect${textCustom[0]}`}
                   >
                     {textCustom[0]}
                   </div>
@@ -252,10 +247,9 @@ export const Select = ({
                         selectAction(selectState[i]),
                         closeOnSelect ? closeAction(selectState[i]) : null,
                       ]}
-                      data-cy={`CheckElementContainer[${i}]`}
                     >
                       {multiSelect ? (
-                        <span className="checkelement" data-cy={`CheckElementSpan[${i}]`}></span>
+                        <span className="checkelement"></span>
                       ) : null}
                       {optionCustom ? optionCustom(e) : e[optionLabel]}
                     </div>
@@ -266,7 +260,6 @@ export const Select = ({
                     className="btn primary normal block"
                     onClick={charge.action}
                     title={charge.text}
-                    cy={`Select${charge.text}`}
                   >
                     {charge.text}
                   </Button>
@@ -278,7 +271,7 @@ export const Select = ({
       </div>
 
       {required?.erro?.[name] ? (
-        <span className="campo-obrigatorio" data-cy="MandatorySelectFieldSpan">{required.message}</span>
+        <span className="campo-obrigatorio">{required.message}</span>
       ) : null}
     </div>
   );
@@ -291,9 +284,8 @@ export const FilterAction = (d, e, n = 'name') => {
 export const FilterSelect = ({
   action = (params) => null,
   title = 'Filtrar',
-  cy,
-  clean = <IcoClose cy={`Filter${cy}`}/>,
-  filter = <IcoSearch cy={`Filter${cy}`}/>,
+  clean = <IcoClose />,
+  filter = <IcoSearch />,
 }) => {
   const [filterState, setFilterState] = useState('');
   const cleanFilter = () => {
@@ -308,7 +300,7 @@ export const FilterSelect = ({
   return (
     <div className="select-filter">
       <div className="input-actions">
-        <Button cy={`SelectFilter${cy}`}onClick={() => action(filterState)} title={title}>
+        <Button onClick={() => action(filterState)} title={title}>
           {filter}
         </Button>
       </div>
@@ -319,13 +311,11 @@ export const FilterSelect = ({
         value={filterState}
         onChange={(e) => onActionFilter(e.target.value)}
         placeholder={title}
-        data-cy={`SelectInputFilter${cy}`}
       />
       <div className="input-actions">
         <Button
           className={filterState === '' ? 'hidden' : ''}
           onClick={() => [cleanFilter(), action('')]}
-          cy={`CleanFilter${cy}`}
         >
           {clean}
         </Button>

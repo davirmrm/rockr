@@ -21,7 +21,7 @@ export const Accordion = ({
   }, [data, tabSelect]);
 
   return (
-    <div className={`${type === 'custom' ? 'custom-tab' : 'box-tab'} `} data-cy={`Accordion${cy}FullContainer`}>
+    <div className={`${type === 'custom' ? 'custom-tab' : 'box-tab'} `}>
       {data?.map((e) => (
         <div 
         key={`accordion-${e.id}`} 
@@ -33,8 +33,8 @@ export const Accordion = ({
               actionTab(e.id),
             ]}
           >
-            <h6 data-cy={`Accordion${cy}${e.id}Title`}>{e.title}</h6>
-            <span data-cy={`Accordion${cy}${e.id}TitleIcon`}>{e.id === tabStateId ? <IcoMinus /> : <IcoAdd />}</span>
+            <h6>{e.title}</h6>
+            <span>{e.id === tabStateId ? <IcoMinus /> : <IcoAdd />}</span>
           </div>
           <div className="accordion-container">{e.content}</div>
         </div>

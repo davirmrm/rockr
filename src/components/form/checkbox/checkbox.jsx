@@ -15,7 +15,6 @@ export const Checkbox = ({
   optionValue = 'id',
   optionRight = [],
   textRight = '',
-  cy = '',
 }) => {
   const veryfiCheck = (e) => {
     const verify = checked?.filter((elem) => {
@@ -40,7 +39,7 @@ export const Checkbox = ({
   const checkedAction = (e) => {
     if (e !== undefined) {
       const resp = options ? (e ? veryfiCheck(e) : []) : e;
-      const fullResponse = {name: name, value: resp, type: type, id: cy }
+      const fullResponse = {name: name, value: resp, type: type }
       action && action(e, fullResponse);
     }
   };
@@ -73,7 +72,7 @@ export const Checkbox = ({
         disabled ? 'disabled' : ''
       }`}
     >
-      {label ? <label htmlFor={`id-${name}`} data-cy={`FormCheckbox${name}${cy}`}>{label}</label> : null}
+      {label ? <label htmlFor={`id-${name}`}>{label}</label> : null}
       {options ? (
         options.map((c, index) => {
           return (
@@ -82,7 +81,6 @@ export const Checkbox = ({
                 key={`${name}-${c[optionValue]}`}
                 className={`check-box ${veryfiChecked(c) ? 'checked' : ''}`}
                 onClick={() => checkedAction(!disabled ? c : null)}
-                data-cy={`FormCheckbox${name}Optionclick${c[optionValue]}${cy}`}
               >
                 <span
                   className={type}
@@ -95,7 +93,6 @@ export const Checkbox = ({
                         }
                       : {}
                   }
-                  data-cy={`FormCheckbox${name}Label${c[optionLabel]}`}
                 ></span>
                 {c[optionLabel]}
               </div>
@@ -107,14 +104,12 @@ export const Checkbox = ({
         <div
           className={`check-box ${checked ? 'checked' : ''}`}
           onClick={() => checkedAction(!disabled ? !checked : false)}
-          data-cy={`FormCheckbox${name}Optionclick${cy}`}
         >
           <span
             className={type}
             style={
               checked && colorCustom ? { backgroundColor: colorCustom } : {}
             }
-            data-cy={`FormCheckbox${name}Label${cy}`}
           ></span>
           {text}
         </div>

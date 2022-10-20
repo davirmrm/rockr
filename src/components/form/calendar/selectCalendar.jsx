@@ -51,7 +51,6 @@ export function SelectCalendar({
   required,
   disabled,
   typeMont = 'abv',
-  cy = '',
 }) {
   const [selectOpen, setSelectOpen] = useState(false);
   const [selectCoordinates, setSelectCoordinates] = useState({});
@@ -140,7 +139,7 @@ export function SelectCalendar({
     } `}
   >
     {label ? (
-      <label className="label-input" htmlFor={`id-${name}`} data-cy={`SelectBoxLabel${name}${cy}`}>
+      <label className="label-input" htmlFor={`id-${name}`} >
         {require ? <span className='required-label'>*</span> : ''} {label}
       </label>
     ) : null}
@@ -150,7 +149,6 @@ export function SelectCalendar({
         onClick={(e) =>
           openSelect({ elem: e, value: !disabled ? !selectOpen : false })
         }
-        cy="OpenSelectCalendar"
       >
         {textButton(selected)}
       </Button>
@@ -167,7 +165,7 @@ export function SelectCalendar({
       </Portal>
     </div>
     {required?.erro?.[name] ? (
-      <span className="campo-obrigatorio" data-cy="MandatorySelectCalendaraFieldSpan">{required.message}</span>
+      <span className="campo-obrigatorio" >{required.message}</span>
     ) : null}
   </div>
 }

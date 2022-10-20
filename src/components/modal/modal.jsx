@@ -28,7 +28,7 @@ export const Modal = ({
   );
 };
 
-const fullscreen = ({ title, children, closeText, close, actions, cy }) => {
+const fullscreen = ({ title, children, closeText, close, actions }) => {
   return (
     <div className={`box-modal fullScreen`}>
       <div className="modal-header" >
@@ -54,7 +54,6 @@ const modalNormal = ({
   closeText,
   close,
   actions,
-  cy
 }) => {
   return (
     <div className={`box-modal`} >

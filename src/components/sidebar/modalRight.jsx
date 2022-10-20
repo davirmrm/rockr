@@ -33,9 +33,8 @@ export const ModalRight = ({
           <Button type='link' 
             onClick={() => action(false)} 
             title='Fechar' 
-            cy={`filterUsuariiosClose`}
           >
-            <IcoClose cy={`filterUsuariios`}/>
+            <IcoClose />
           </Button>
         </div>
         {children}

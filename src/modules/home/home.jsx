@@ -35,7 +35,6 @@ export default () => {
   }, []);
 
   useEffect(() =>{
-    console.log('ddd', page);
     dispatchListPost({_page: page + 1, _limit: 5})
   }, [currentPage]);
 

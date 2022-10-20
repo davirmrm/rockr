@@ -43,7 +43,6 @@ export function CalendarYear({
     ano: dataAtualAno,
     anos: []
   })
-console.log(dataFim, 'dataFimdataFim', dataFimAno);
 
   useEffect(()=>{
     let anos = []

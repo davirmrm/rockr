@@ -19,14 +19,12 @@ export default () => {
   }
 
   const hanldeChange = (e, v) => {
-    console.log(e, v, 'hanldeChange');
     setErro({...erro, [v.name]: v.message})
     setInputState({ ...inputState, [e.name]: e.value })
   }
 
   const hanldeSubmit = (e) => {
     dispatch(loading())
-    console.log(e, 'hanldeSubmit');
     const valida = validacaoForm({formRequired, formValues: e})
     const valid = Object.keys(valida).filter(v=> valida[v] !== false? valida[v] : null)
     setErro(valida)
@@ -41,7 +39,6 @@ export default () => {
       dispatch(loaded())
     }
   }
-console.log(inputState, 'inputState');
   return (
     <Modal
       title={nls.contactTitle}

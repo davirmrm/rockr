@@ -10,7 +10,6 @@ export default () => {
   const dispatch = useDispatch()
 
   const handleMenu = e => {
-    console.log(e, 'handleMenu')
     if (e.id === 'contact') {
       dispatch(modalOpen('contact'))
     }

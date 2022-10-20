@@ -9,8 +9,7 @@ export const RadioButton = ({
   type = 'radiobutton',
   color = '',
   optionLabel = 'name',
-  optionValue = 'id',
-  cy=''
+  optionValue = 'id'
 }) => {
   const checkedAction = (e) => {
     const resp = e;
@@ -25,7 +24,7 @@ export const RadioButton = ({
 
   return (
     <div className={`form-box form-radiobutton ${type} ${color} `}>
-      <label htmlFor={`id-${name}`} data-cy={`FormRadiobutton${capitalizedName}${cy}`}>{label}</label>
+      <label htmlFor={`id-${name}`}>{label}</label>
       <div className="radio-button-container">
         {options
           ? options.map((c) => {
@@ -34,10 +33,8 @@ export const RadioButton = ({
                   key={`${name}-${c[optionValue]}`}
                   className={`radio-box ${veryfiChecked(c) ? 'checked' : ''}`}
                   onClick={() => checkedAction(c)}
-                  data-cy={`FormRadioButton${capitalizedName}OptionClick${c[optionValue]}${cy}`}
                 >
                   <span 
-                  data-cy={`FormRadioButton${capitalizedName}OptionClick${c[optionValue]}${cy}Label`} 
                   className={type}
                   />
                     {c[optionLabel]}
