@@ -20,12 +20,12 @@ export default () => {
     <>
       <header id='box-header'>
         <div className='box-header-content'>
-          <button
+          {/* <button
             className={false ? 'btn-menu open' : 'btn-menu'}
             onClick={() => null}
           >
             <IcoMenu />
-          </button>
+          </button> */}
           <div className='box-logo'>
             <h1>{nls.applicationTitle}</h1>
           </div>

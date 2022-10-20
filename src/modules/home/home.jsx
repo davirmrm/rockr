@@ -6,7 +6,7 @@ import { setPostLoad } from '../posts/redux/postsActions'
 import './home.scss'
 import nls from './nls/pt-BR.json'
 import { history } from '../../helpers/history'
-import api from '../../helpers/api'
+import { IcoArrowDoubleRigth } from '../../components'
 
 export default () => {
   const dispatch = useDispatch()
@@ -50,10 +50,11 @@ export default () => {
 
   return (
     <div className='box-home'>
+      <div className='box-home-cards'>
       {
         posts.map((e, i)=>{
-          const articleDemo = String(e.article).length > 100 ? String(e.article).slice(0, 100) : e.article
-          return <div key={e.id} className='box-home-content' onClick={()=> handlePost(e)}>
+          const articleDemo = String(e.article).length > 100 ? `${String(e.article).slice(0, 100)}...` : e.article
+          return <div key={e.id} className='box-home-content' >
             {
               e.imageUrl?
               <div className='box-home-content-img'>
@@ -66,11 +67,15 @@ export default () => {
               <h3 dangerouslySetInnerHTML={{__html: e.title}}></h3>
               <div dangerouslySetInnerHTML={{__html: articleDemo}}></div>
             </div>
+            <div className='box-home-content-button-post' onClick={()=> handlePost(e)}>
+              <IcoArrowDoubleRigth />
+            </div>
           </div>
         })
       }
+      </div>
       
-      <p ref={loaderRef}>Carregando mais episodios...</p>
+      <p className='more-info' ref={loaderRef}>{nls.moreInfo}</p>
     </div>
   )
 }

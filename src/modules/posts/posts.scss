@@ -29,12 +29,60 @@
          }
       } 
       &-article{
-         padding: 50px 0;
-         width: 600px;
+         padding: 50px 20px;
+         max-width: 560px;
+         width: 100%;
          margin: auto;
       }
    }
 }
 
 @media (max-width: 780px) {
+   .box-post{
+      &-content{
+         &-img{
+            width: 30%;
+            img{
+               width: 100%;
+            }
+         } 
+         &-info{
+            width: 70%;
+            padding: 10px 10px 10px 20px;
+            p{
+               margin-bottom: 10px;
+            }
+         } 
+      }
+   }
+}
+
+@media (max-width: 600px) {
+   .box-post{
+      &-content{
+         &-head{
+            align-items: initial;
+            flex-direction: column;
+         }
+         &-img{
+            width: 100%;
+            img{
+               width: 100%;
+            }
+         } 
+         &-info{
+            width: 100%;
+            padding: 15px 15px 15px 30px;
+            p{
+               margin-bottom: 10px;
+            }
+            h3{
+               font-size: 18px;
+            }
+         } 
+         &-article{
+            padding: 20px 20px;
+         }
+      }
+   }
 }

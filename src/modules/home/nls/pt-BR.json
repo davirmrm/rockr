@@ -1,5 +1,6 @@
 {
-  "title": "Meus produtos",
+  "title": "",
+  "moreInfo": "loading more posts...",
 
   "mensagem": {
     "obrigatorio": "Obrigatório",
