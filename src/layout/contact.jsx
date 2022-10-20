@@ -44,14 +44,14 @@ export default () => {
 console.log(inputState, 'inputState');
   return (
     <Modal
-      title='Contact'
+      title={nls.contactTitle}
       size='medium box-contact'
       open={statusModal === 'contact' ? true : false}
       close={() => dispatch(modalOpen(''), setErro(''))}
       closeText={nls.close}
     >
       <>
-        <Input label='Name' name='name' placeholder='Fill your full name'
+        <Input label={nls.name} name='name' placeholder={nls.namePlaceholder}
           action={(e, ef) => hanldeChange(e, ef)} 
           value={inputState.name}
           required={{
@@ -60,7 +60,7 @@ console.log(inputState, 'inputState');
             message: nls.message[`mandatory`]
           }}
         />
-        <Input label='E-mail' name='email' placeholder='Fill a valid e-mail'
+        <Input label={nls.email} name='email' placeholder={nls.emailPlaceholder}
           action={(e, ef) => hanldeChange(e, ef)} 
           value={inputState.email}
           required={{
@@ -69,7 +69,7 @@ console.log(inputState, 'inputState');
             message: nls.message[`mandatory`]
           }}
         />
-        <Input label='Phone' name='phone' placeholder='Fill your phone'
+        <Input label={nls.phone} name='phone' placeholder={nls.phonePlaceholder}
           action={(e, ef) => hanldeChange(e, ef)} 
           value={MaskTelefone( inputState.phone)}
           maxLength={15}
@@ -79,7 +79,7 @@ console.log(inputState, 'inputState');
             message: nls.message[`mandatory`]
           }}
         />
-        <TextArea label='Post' name='post' placeholder='Hello...'
+        <TextArea label={nls.post} name='post' placeholder={nls.postPlaceholder}
           action={(e, ef) => hanldeChange(e, ef)} 
           value={inputState.post}
           required={{

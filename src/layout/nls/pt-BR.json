@@ -2,6 +2,16 @@
     "applicationTitle": "Rockr Blog",    
     "applicationFooter": "Copyright © 2022 Rockr Blog.", 
     
+    "contactTitle": "Contact",
+    "name": "Name",
+    "namePlaceholder": "Fill your full name",
+    "email": "E-mail",
+    "emailPlaceholder": "Fill a valid e-mail",
+    "phone": "Phone",
+    "phonePlaceholder": "Fill your phone",
+    "post": "Message",
+    "postPlaceholder": "Hello...",
+
     "submit": "Submit",
     "close": "Close",
 
